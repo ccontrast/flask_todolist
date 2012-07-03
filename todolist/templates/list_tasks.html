@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h1>To Do List</h1>
+        <h2>Incomplete</h2>
+        <ul>
+            {% for item in tasks -%}
+                {% if item.done == False -%}
+                    <li>{{item}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2>Complete</h2>
+        <ul>
+            {% for item in tasks -%}
+                {% if item.done == True -%}
+                    <li>{{item}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </body>
+</html>

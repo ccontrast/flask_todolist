@@ -27,7 +27,7 @@ class Task(db.Model):
 
     def __repr__(self):
         status = "Completed" if self.done else "Not Complete"
-        return "<Task %d:%s %s.>"%(self.id or -1, self.title, status)
+        return "<Task %d: %s %s.>"%(self.id or -1, self.title, status)
 
     def __str__(self):
         return self.__repr__().replace("<", "").replace(">", "")
