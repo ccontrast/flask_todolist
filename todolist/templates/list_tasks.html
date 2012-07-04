@@ -1,11 +1,37 @@
 <html>
+    
+<style type="text/css">
+
+body { background-color: #1078E1; 
+margin-top:100px;
+margin-bottom:100px;
+margin-right:100px;
+margin-left:100px;
+}
+
+h1 { color: black; text-align: center;}
+
+h1 { font-family: sans-serif; }
+h2 { font-family: sans-serif; }
+ul { font-family: sans-serif; }
+
+h1 {margin: 5px; border: 1px solid black; padding: 20px;} 
+
+
+
+</style>
+
     <body>
         <h1>To Do List</h1>
+
+
+
         <h2>Incomplete</h2>
         <ul>
             {% for item in tasks -%}
                 {% if item.done == False -%}
-                    <li>{{item}}</li>
+                    <li><a href="{{ url_for("view_task", task_id=item.id) }}">{{item}}</a>
+                    </li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -13,7 +39,7 @@
         <ul>
             {% for item in tasks -%}
                 {% if item.done == True -%}
-                    <li>{{item}}</li>
+                    <li><a href="{{ url_for("view_task", task_id=item.id) }}">{{item}}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

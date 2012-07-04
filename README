@@ -18,6 +18,7 @@ Setup/installation:
     Created the todolist database
     (env)Meringue:todolist chriszf$ 
 
+source/env/bin/activate
 
 Experimenting with the task creation and deletion:
     
